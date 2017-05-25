@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
+
+
 
 namespace WindowsFormsApplication1
 {
@@ -15,6 +18,29 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void przycisk_polacz_Click(object sender, EventArgs e)
+        {
+            string host = adres.Text;
+            int port = System.Convert.ToInt32(my_port.Value);
+
+            try
+            {
+                TcpClient klient = new TcpClient(host, port);
+                info_o_polaczeniu.Items.Add("Nawiazanie polaczenia z " + host + " Na porcie: " + port);
+                klient.Close();
+            }
+            catch (Exception ex)
+            {
+                info_o_polaczeniu.Items.Add("Błąd: nie udalo sie nawiazac polaczenia");
+                MessageBox.Show(ex.ToString(), "Błąd");
+
+            }
+
+
+
+
         }
     }
 }

@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 15);
+            this.label2.Location = new System.Drawing.Point(221, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 2;
@@ -78,10 +78,11 @@
             this.przycisk_polacz.TabIndex = 5;
             this.przycisk_polacz.Text = "polacz";
             this.przycisk_polacz.UseVisualStyleBackColor = true;
+            this.przycisk_polacz.Click += new System.EventHandler(this.przycisk_polacz_Click);
             // 
             // my_port
             // 
-            this.my_port.Location = new System.Drawing.Point(264, 13);
+            this.my_port.Location = new System.Drawing.Point(264, 10);
             this.my_port.Maximum = new decimal(new int[] {
             65555,
             0,
